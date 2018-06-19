@@ -1,6 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div>
-  Count: {{ count }}
+  <!-- Count: {{ count }} -->
+  Count: {{ count$ | async }}
   <button (click)="increment()">+</button>
   <button (click)="decrement()">-</button>
 </div>
