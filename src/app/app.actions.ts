@@ -8,15 +8,19 @@ export class CounterActions {
     static INCREMENT = 'INCREENT';
     static DECREMENT = 'DECREMENT';
 
-    increment(): Action {
-        return { type: CounterActions.INCREMENT };
+    increment(value: number): MyAction {
+        return { type: CounterActions.INCREMENT, value: value };
     }
 
-    decrement(): Action {
-        return { type: CounterActions.DECREMENT };
+    decrement(value: number): MyAction {
+        return { type: CounterActions.DECREMENT, value: value};
     }
 
 
 
     
+}
+
+export interface MyAction extends Action {
+    [value: string]: any
 }

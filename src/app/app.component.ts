@@ -21,10 +21,10 @@ export class AppComponent { // implements OnDestroy
   }
 
   increment() {
-    this.ngRedux.dispatch(this.actions.increment());
+    this.ngRedux.dispatch(this.actions.increment(2));
   } // <- New
   decrement() {
-    this.ngRedux.dispatch(this.actions.decrement());
+    this.ngRedux.dispatch(this.actions.decrement(1));
   } // <- New
 
   // ngOnDestroy() {
