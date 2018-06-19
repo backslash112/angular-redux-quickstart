@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { NgRedux } from '@angular-redux/store';
+import { NgRedux, select } from '@angular-redux/store';
 import { IAppState } from './store';
 import { CounterActions } from './app.actions';
 import { Observable } from 'rxjs';
@@ -13,11 +13,11 @@ export class AppComponent { // implements OnDestroy
   title = 'app';
   // count: number; // <- New
   // subcription;
-  readonly count$: Observable<number>;
+  @select() readonly count$: Observable<number>;
 
   constructor(private ngRedux: NgRedux<IAppState>, private actions: CounterActions) {
     // this.subcription = ngRedux.select<number>('count').subscribe(newCount => this.count = newCount);
-    this.count$ = ngRedux.select<number>('count');
+    // this.count$ = ngRedux.select<number>('count');
   }
 
   increment() {
